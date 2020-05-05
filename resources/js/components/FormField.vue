@@ -107,6 +107,8 @@
 import L from "leaflet";
 
 import { FormField, HandlesValidationErrors } from "laravel-nova";
+import qs from "qs";
+
 // import { LMap, LTileLayer, LMarker, LIcon } from "vue2-leaflet";
 // import "leaflet/dist/leaflet.css";
 
@@ -128,7 +130,7 @@ export default {
     //   iconRetinaUrl: "http://haythem.test/haythem/CheckAddress/marker-icon.png"
     // });
     return {
-      show_details: true,
+      show_details: false,
       apiResponse: null,
       google_map_url:
         "https://maps.google.com/maps?q=35.856737, 10.606619&z=11&output=embed",
@@ -165,6 +167,15 @@ export default {
     checkAddress() {
       // alert(this.field.endPoint);
       this.show_details = true;
+      var data = {
+        address_line_1_input: this.address_line_1_input,
+        address_line_2_input: this.address_line_2_input,
+        suburb_input: this.suburb_input,
+        postal_code_input: this.postal_code_input
+      };
+
+      console.log("data sent");
+      console.log(data);
 
       axios
         .post(this.field.endPoint, {
@@ -175,7 +186,7 @@ export default {
             Accept: "application/json",
             "Access-Control-Allow-Methods": "POST"
           },
-          address: this.value
+          data
         })
         .then(response => {
           this.apiResponse = response.data;
@@ -186,7 +197,7 @@ export default {
           this.postal_code_output = this.apiResponse.postal_code;
           this.message = this.apiResponse.message;
 
-          console.log("response data from api");
+          console.log("data recieved");
           console.log(this.apiResponse);
 
           this.google_map_url =
