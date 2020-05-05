@@ -180,10 +180,10 @@ export default {
         .then(response => {
           this.apiResponse = response.data;
 
-          this.address_line_1 = this.apiResponse.address_line_1;
-          this.address_line_2 = this.apiResponse.address_line_2;
-          this.suburb = this.apiResponse.suburb;
-          this.postal_code = this.apiResponse.postal_code;
+          this.address_line_1_output = this.apiResponse.address_line_1;
+          this.address_line_2_output = this.apiResponse.address_line_2;
+          this.suburb_output = this.apiResponse.suburb;
+          this.postal_code_output = this.apiResponse.postal_code;
           this.message = this.apiResponse.message;
 
           console.log("response data from api");
