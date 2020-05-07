@@ -133,7 +133,7 @@ export default {
       show_details: false,
       apiResponse: null,
       google_map_url:
-        "https://maps.google.com/maps?q=35.856737, 10.606619&z=11&output=embed",
+        "https://maps.google.com/maps?q=0.0,0.0&z=11&output=embed",
       address_line_1_input: "",
       address_line_2_input: "",
       suburb_input: "",
