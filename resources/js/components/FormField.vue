@@ -213,11 +213,18 @@ export default {
         });
     },
     clear() {
-      this.address_line_1_input = "";
-      this.address_line_2_input = "";
-      this.suburb_input = "";
-      this.postal_code_input = "";
+      this.address_line_1_output = "";
+      this.address_line_2_output = "";
+      this.suburb_output = "";
+      this.postal_code_output = "";
+      this.message = "";
       this.show_details = false;
+      this.google_map_url =
+        "https://maps.google.com/maps?q=" +
+        this.apiResponse.delivery_lat +
+        "," +
+        this.apiResponse.delivery_lng +
+        "&z=11&output=embed";
     },
 
     /**
