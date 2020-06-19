@@ -763,6 +763,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -801,7 +806,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       address_line_2_output: "No Result",
       suburb_output: "No Result",
       postal_code_output: "No Result",
-      message: "No Result"
+      message: "No Result",
+      matched_route: "No Mactched Route"
       //   map: null,
       //   zoom: 16,
       //   lat: "0.00000000",
@@ -856,7 +862,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         _this.suburb_output = _this.apiResponse.suburb;
         _this.postal_code_output = _this.apiResponse.postal_code;
         _this.message = _this.apiResponse.message;
-
+        _this.matched_route = _this.apiResponse.matched_route;
         console.log("data recieved");
         console.log(_this.apiResponse);
 
@@ -43041,7 +43047,15 @@ var render = function() {
             _c(
               "label",
               { staticClass: "inline-block text-80 pt-2 leading-tight" },
-              [_vm._v("Postal code : " + _vm._s(_vm.postal_code_output))]
+              [_vm._v("Postal Code : " + _vm._s(_vm.postal_code_output))]
+            ),
+            _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "label",
+              { staticClass: "inline-block text-80 pt-2 leading-tight" },
+              [_vm._v("Matched Route : " + _vm._s(_vm.matched_route))]
             ),
             _vm._v(" "),
             _c("br"),

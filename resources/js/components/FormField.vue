@@ -73,7 +73,12 @@
 
         <label
           class="inline-block text-80 pt-2 leading-tight"
-        >Postal code : {{ postal_code_output }}</label>
+        >Postal Code : {{ postal_code_output }}</label>
+        <br />
+
+        <label
+          class="inline-block text-80 pt-2 leading-tight"
+        >Matched Route : {{ matched_route }}</label>
         <br />
 
         <label class="inline-block text-80 pt-2 leading-tight">Message : {{ message }}</label>
@@ -142,7 +147,8 @@ export default {
       address_line_2_output: "No Result",
       suburb_output: "No Result",
       postal_code_output: "No Result",
-      message: "No Result"
+      message: "No Result",
+      matched_route: "No Mactched Route"
       //   map: null,
       //   zoom: 16,
       //   lat: "0.00000000",
@@ -196,7 +202,7 @@ export default {
           this.suburb_output = this.apiResponse.suburb;
           this.postal_code_output = this.apiResponse.postal_code;
           this.message = this.apiResponse.message;
-
+          this.matched_route = this.apiResponse.matched_route;
           console.log("data recieved");
           console.log(this.apiResponse);
 
