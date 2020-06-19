@@ -224,6 +224,7 @@ export default {
       this.suburb_output = "";
       this.postal_code_output = "";
       this.message = "";
+      this.matched_route = "";
       this.show_details = false;
       this.google_map_url =
         "https://maps.google.com/maps?q=" +
