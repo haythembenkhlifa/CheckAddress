@@ -878,6 +878,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.suburb_output = "";
       this.postal_code_output = "";
       this.message = "";
+      this.matched_route = "";
       this.show_details = false;
       this.google_map_url = "https://maps.google.com/maps?q=" + this.apiResponse.delivery_lat + "," + this.apiResponse.delivery_lng + "&z=11&output=embed";
     },
