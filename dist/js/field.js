@@ -43089,7 +43089,7 @@ var render = function() {
               { staticClass: "inline-block text-80 pt-2 leading-tight" },
               [
                 _vm._v(
-                  "Google Formated Address : " +
+                  "Google Formatted Address : " +
                     _vm._s(_vm.google_formatted_address)
                 )
               ]

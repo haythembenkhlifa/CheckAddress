@@ -83,7 +83,7 @@
 
         <label class="inline-block text-80 pt-2 leading-tight">Google Address Accuracy : {{ google_address_accuracy }}</label><br />
         
-        <label class="inline-block text-80 pt-2 leading-tight">Google Formated Address : {{ google_formatted_address }}</label><br />
+        <label class="inline-block text-80 pt-2 leading-tight">Google Formatted Address : {{ google_formatted_address }}</label><br />
 
         <label class="inline-block text-80 pt-2 leading-tight">Message : {{ message }}</label>
 
