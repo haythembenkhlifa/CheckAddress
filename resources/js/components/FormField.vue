@@ -81,6 +81,10 @@
         >Matched Route : {{ matched_route }}</label>
         <br />
 
+        <label class="inline-block text-80 pt-2 leading-tight">Google Address Accuracy : {{ google_address_accuracy }}</label><br />
+        
+        <label class="inline-block text-80 pt-2 leading-tight">Google Formated Address : {{ google_formatted_address }}</label><br />
+
         <label class="inline-block text-80 pt-2 leading-tight">Message : {{ message }}</label>
 
         <iframe
@@ -147,8 +151,11 @@ export default {
       address_line_2_output: "No Result",
       suburb_output: "No Result",
       postal_code_output: "No Result",
-      message: "No Result",
-      matched_route: "No Mactched Route"
+      matched_route: "No Mactched Route",
+      google_address_accuracy:"No Result",
+      google_formatted_address:"No Result",
+      message: "No Result"
+
       //   map: null,
       //   zoom: 16,
       //   lat: "0.00000000",
@@ -196,11 +203,13 @@ export default {
         })
         .then(response => {
           this.apiResponse = response.data;
-
+          
           this.address_line_1_output = this.apiResponse.address_line_1;
           this.address_line_2_output = this.apiResponse.address_line_2;
           this.suburb_output = this.apiResponse.suburb;
           this.postal_code_output = this.apiResponse.postal_code;
+          this.google_address_accuracy = this.apiResponse.google_address_accuracy;
+          this.google_formatted_address = this.apiResponse.google_formatted_address;
           this.message = this.apiResponse.message;
           this.matched_route = this.apiResponse.matched_route;
           console.log("data recieved");
@@ -223,6 +232,8 @@ export default {
       this.address_line_2_output = "";
       this.suburb_output = "";
       this.postal_code_output = "";
+      this.google_address_accuracy = "";
+      this.google_formatted_address = "";
       this.message = "";
       this.matched_route = "";
       this.show_details = false;

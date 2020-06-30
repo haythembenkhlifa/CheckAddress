@@ -768,6 +768,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -806,8 +810,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       address_line_2_output: "No Result",
       suburb_output: "No Result",
       postal_code_output: "No Result",
-      message: "No Result",
-      matched_route: "No Mactched Route"
+      matched_route: "No Mactched Route",
+      google_address_accuracy: "No Result",
+      google_formatted_address: "No Result",
+      message: "No Result"
+
       //   map: null,
       //   zoom: 16,
       //   lat: "0.00000000",
@@ -861,6 +868,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         _this.address_line_2_output = _this.apiResponse.address_line_2;
         _this.suburb_output = _this.apiResponse.suburb;
         _this.postal_code_output = _this.apiResponse.postal_code;
+        _this.google_address_accuracy = _this.apiResponse.google_address_accuracy;
+        _this.google_formatted_address = _this.apiResponse.google_formatted_address;
         _this.message = _this.apiResponse.message;
         _this.matched_route = _this.apiResponse.matched_route;
         console.log("data recieved");
@@ -877,6 +886,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.address_line_2_output = "";
       this.suburb_output = "";
       this.postal_code_output = "";
+      this.google_address_accuracy = "";
+      this.google_formatted_address = "";
       this.message = "";
       this.matched_route = "";
       this.show_details = false;
@@ -43059,6 +43070,30 @@ var render = function() {
               [_vm._v("Matched Route : " + _vm._s(_vm.matched_route))]
             ),
             _vm._v(" "),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "label",
+              { staticClass: "inline-block text-80 pt-2 leading-tight" },
+              [
+                _vm._v(
+                  "Google Address Accuracy : " +
+                    _vm._s(_vm.google_address_accuracy)
+                )
+              ]
+            ),
+            _c("br"),
+            _vm._v(" "),
+            _c(
+              "label",
+              { staticClass: "inline-block text-80 pt-2 leading-tight" },
+              [
+                _vm._v(
+                  "Google Formated Address : " +
+                    _vm._s(_vm.google_formatted_address)
+                )
+              ]
+            ),
             _c("br"),
             _vm._v(" "),
             _c(
