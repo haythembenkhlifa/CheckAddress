@@ -58,22 +58,8 @@
       >Clear</button>
 
       <div v-show="show_details">
-        <label
-          class="inline-block text-80 pt-2 leading-tight"
-        >Address Line 1 :{{ address_line_1_output }}</label>
-        <br />
-
-        <label
-          class="inline-block text-80 pt-2 leading-tight"
-        >Address Line 2 :{{ address_line_2_output }}</label>
-        <br />
 
         <label class="inline-block text-80 pt-2 leading-tight">Suburb : {{ suburb_output }}</label>
-        <br />
-
-        <label
-          class="inline-block text-80 pt-2 leading-tight"
-        >Postal Code : {{ postal_code_output }}</label>
         <br />
 
         <label
@@ -85,9 +71,7 @@
         
         <label class="inline-block text-80 pt-2 leading-tight">Google Formatted Address : {{ google_formatted_address }}</label><br />
 
-        <label class="inline-block text-80 pt-2 leading-tight">Message : {{ message }}</label>
-
-        <iframe
+         <iframe
           style="border-radius:5px;"
           :src="google_map_url"
           width="100%"
@@ -147,15 +131,11 @@ export default {
       address_line_2_input: "",
       suburb_input: "",
       postal_code_input: "",
-      address_line_1_output: "No Result",
-      address_line_2_output: "No Result",
       suburb_output: "No Result",
-      postal_code_output: "No Result",
       matched_route: "No Mactched Route",
       google_address_accuracy:"No Result",
-      google_formatted_address:"No Result",
-      message: "No Result"
-
+      google_formatted_address:"No Result"
+      
       //   map: null,
       //   zoom: 16,
       //   lat: "0.00000000",
@@ -204,13 +184,9 @@ export default {
         .then(response => {
           this.apiResponse = response.data;
           
-          this.address_line_1_output = this.apiResponse.address_line_1;
-          this.address_line_2_output = this.apiResponse.address_line_2;
           this.suburb_output = this.apiResponse.suburb;
-          this.postal_code_output = this.apiResponse.postal_code;
           this.google_address_accuracy = this.apiResponse.google_address_accuracy;
           this.google_formatted_address = this.apiResponse.google_formatted_address;
-          this.message = this.apiResponse.message;
           this.matched_route = this.apiResponse.matched_route;
           console.log("data recieved");
           console.log(this.apiResponse);
@@ -228,13 +204,9 @@ export default {
         });
     },
     clear() {
-      this.address_line_1_output = "";
-      this.address_line_2_output = "";
       this.suburb_output = "";
-      this.postal_code_output = "";
       this.google_address_accuracy = "";
       this.google_formatted_address = "";
-      this.message = "";
       this.matched_route = "";
       this.show_details = false;
       this.google_map_url =

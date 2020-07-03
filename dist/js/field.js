@@ -756,22 +756,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -806,14 +790,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       address_line_2_input: "",
       suburb_input: "",
       postal_code_input: "",
-      address_line_1_output: "No Result",
-      address_line_2_output: "No Result",
       suburb_output: "No Result",
-      postal_code_output: "No Result",
       matched_route: "No Mactched Route",
       google_address_accuracy: "No Result",
-      google_formatted_address: "No Result",
-      message: "No Result"
+      google_formatted_address: "No Result"
 
       //   map: null,
       //   zoom: 16,
@@ -864,13 +844,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }).then(function (response) {
         _this.apiResponse = response.data;
 
-        _this.address_line_1_output = _this.apiResponse.address_line_1;
-        _this.address_line_2_output = _this.apiResponse.address_line_2;
         _this.suburb_output = _this.apiResponse.suburb;
-        _this.postal_code_output = _this.apiResponse.postal_code;
         _this.google_address_accuracy = _this.apiResponse.google_address_accuracy;
         _this.google_formatted_address = _this.apiResponse.google_formatted_address;
-        _this.message = _this.apiResponse.message;
         _this.matched_route = _this.apiResponse.matched_route;
         console.log("data recieved");
         console.log(_this.apiResponse);
@@ -882,13 +858,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       });
     },
     clear: function clear() {
-      this.address_line_1_output = "";
-      this.address_line_2_output = "";
       this.suburb_output = "";
-      this.postal_code_output = "";
       this.google_address_accuracy = "";
       this.google_formatted_address = "";
-      this.message = "";
       this.matched_route = "";
       this.show_details = false;
       this.google_map_url = "https://maps.google.com/maps?q=" + this.apiResponse.delivery_lat + "," + this.apiResponse.delivery_lng + "&z=11&output=embed";
@@ -43035,31 +43007,7 @@ var render = function() {
             _c(
               "label",
               { staticClass: "inline-block text-80 pt-2 leading-tight" },
-              [_vm._v("Address Line 1 :" + _vm._s(_vm.address_line_1_output))]
-            ),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c(
-              "label",
-              { staticClass: "inline-block text-80 pt-2 leading-tight" },
-              [_vm._v("Address Line 2 :" + _vm._s(_vm.address_line_2_output))]
-            ),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c(
-              "label",
-              { staticClass: "inline-block text-80 pt-2 leading-tight" },
               [_vm._v("Suburb : " + _vm._s(_vm.suburb_output))]
-            ),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c(
-              "label",
-              { staticClass: "inline-block text-80 pt-2 leading-tight" },
-              [_vm._v("Postal Code : " + _vm._s(_vm.postal_code_output))]
             ),
             _vm._v(" "),
             _c("br"),
@@ -43095,12 +43043,6 @@ var render = function() {
               ]
             ),
             _c("br"),
-            _vm._v(" "),
-            _c(
-              "label",
-              { staticClass: "inline-block text-80 pt-2 leading-tight" },
-              [_vm._v("Message : " + _vm._s(_vm.message))]
-            ),
             _vm._v(" "),
             _c("iframe", {
               staticStyle: { "border-radius": "5px" },
