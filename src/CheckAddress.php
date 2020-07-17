@@ -18,4 +18,24 @@ class CheckAddress extends Field
     {
         return $this->withMeta(['endPoint' => $endPoint]);
     }
+
+    public function initialAddressLine1($initial_address_line1 = '')
+    {
+        return $this->withMeta(['initialAddressLine1' => $initial_address_line1]);
+    }
+
+    public function initialAddressLine2($initial_address_line2 = '')
+    {
+        return $this->withMeta(['initialAddressLine2' => $initial_address_line2]);
+    }
+
+    public function initialPostalCode($initial_postal_code = '')
+    {
+        return $this->withMeta(['initialPostalCode' => $initial_postal_code]);
+    }
+
+    public function initialSuburb($initial_suburb = '')
+    {
+        return $this->withMeta(['initialSuburb' => $initial_suburb]);
+    }
 }

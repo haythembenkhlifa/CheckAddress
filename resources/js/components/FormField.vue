@@ -58,20 +58,23 @@
       >Clear</button>
 
       <div v-show="show_details">
-
         <label class="inline-block text-80 pt-2 leading-tight">Suburb : {{ suburb_output }}</label>
+        <br />
+
+        <label class="inline-block text-80 pt-2 leading-tight">Matched Route : {{ matched_route }}</label>
         <br />
 
         <label
           class="inline-block text-80 pt-2 leading-tight"
-        >Matched Route : {{ matched_route }}</label>
+        >Google Address Accuracy : {{ google_address_accuracy }}</label>
         <br />
 
-        <label class="inline-block text-80 pt-2 leading-tight">Google Address Accuracy : {{ google_address_accuracy }}</label><br />
-        
-        <label class="inline-block text-80 pt-2 leading-tight">Google Formatted Address : {{ google_formatted_address }}</label><br />
+        <label
+          class="inline-block text-80 pt-2 leading-tight"
+        >Google Formatted Address : {{ google_formatted_address }}</label>
+        <br />
 
-         <iframe
+        <iframe
           style="border-radius:5px;"
           :src="google_map_url"
           width="100%"
@@ -133,9 +136,9 @@ export default {
       postal_code_input: "",
       suburb_output: "No Result",
       matched_route: "No Mactched Route",
-      google_address_accuracy:"No Result",
-      google_formatted_address:"No Result"
-      
+      google_address_accuracy: "No Result",
+      google_formatted_address: "No Result"
+
       //   map: null,
       //   zoom: 16,
       //   lat: "0.00000000",
@@ -148,7 +151,12 @@ export default {
       //   myMarkerIcon: myMarkerIcon
     };
   },
-  mounted() {},
+  mounted() {
+    this.address_line_1_input = this.field.initialAddressLine1;
+    this.address_line_2_input = this.field.initialAddressLine2;
+    this.suburb_input = this.field.initialSuburb;
+    this.postal_code_input = this.field.initialPostalCode;
+  },
 
   methods: {
     /*
@@ -183,7 +191,7 @@ export default {
         })
         .then(response => {
           this.apiResponse = response.data;
-          
+
           this.suburb_output = this.apiResponse.suburb;
           this.google_address_accuracy = this.apiResponse.google_address_accuracy;
           this.google_formatted_address = this.apiResponse.google_formatted_address;
